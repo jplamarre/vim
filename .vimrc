@@ -24,7 +24,7 @@ if g:os == "win"
 endif
 
 " Vundle init
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 
 " Require Vundle
 try
