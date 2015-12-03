@@ -36,7 +36,7 @@ endtry
 
 "{{{ Vundle Bundles!
 if exists(':Bundle')
-    Bundle 'gmarik/vundle'
+    Bundle 'VundleVim/Vundle.vim'
 
     " My Bundles here:
     "
