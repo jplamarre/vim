@@ -61,12 +61,12 @@ if exists(':Bundle')
     Bundle 'SirVer/ultisnips.git'
     Bundle 'squizlabs/PHP_CodeSniffer'
     Bundle 'phpmd/phpmd'
+    Bundle 'mbbill/undotree'
 end
 "}}}
 
 filetype plugin indent on     " required!
 syntax enable
-colorscheme jc
 runtime macros/matchit.vim
 let g:EasyMotion_leader_key = '<Space>'
 
@@ -349,6 +349,24 @@ function! DisableArrowKeys()
   inoremap <Right> <nop>
 endfunc
 "}}}
+"{{{ Status line color
+function! InsertStatuslineColor(mode)
+    if a:mode == 'i'
+        hi statusline guibg=magenta ctermfg=6 guifg=Black ctermbg=0
+    elseif a:mode == 'r'
+        hi statusline guibg=blue ctermfg=5 guifg=Black ctermbg=0
+    else
+        hi statusline guibg=red ctermfg=1 guifg=Black ctermbg=0
+    endif
+endfunction
+ 
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertChange * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=DarkGrey ctermfg=8 guifg=White ctermbg=15
+
+hi statusline guibg=green ctermfg=8 guifg=White ctermbg=15
+
+"}}}
 "}}}
 
 "{{{ Commands
@@ -437,6 +455,12 @@ vnoremap <C-s> <Esc>:w<CR>
 
 nnoremap <Leader>x :x<CR>
 vnoremap <Leader>x <Esc>:x<CR>
+
+" Fast buffer switching
+nnoremap <C-Right> :bnext!<CR>
+nnoremap <C-Left> :bprev!<CR>
+inoremap <C-Right> <Esc>:bnext!<CR>
+inoremap <C-Left> <Esc>:bprev!<CR>
 
 " Stop that damn ex mode
 nnoremap Q <nop>
