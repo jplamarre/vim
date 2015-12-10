@@ -62,6 +62,7 @@ if exists(':Bundle')
     Bundle 'squizlabs/PHP_CodeSniffer'
     Bundle 'phpmd/phpmd'
     Bundle 'mbbill/undotree'
+    Bundle 'fholgado/minibufexpl.vim'
 end
 "}}}
 
