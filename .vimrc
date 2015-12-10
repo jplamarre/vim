@@ -515,7 +515,15 @@ nnoremap <leader>z :%s/\s\+$//<cr>:let @/=''<CR>
 let g:ctrlp_working_path_mode = 'ra'
 
 " Tab completion - local
-let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Vdebug options
 let g:vdebug_options = {"on_close":"detach"}
