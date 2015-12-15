@@ -64,3 +64,9 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = http://github.com/mbbill/undotree
+[submodule "minibufexpl.vim"]
+	path = minibufexpl.vim
+	url = http://github.com/fholgado/minibufexpl.vim
+[submodule "YouCompleteMe"]
+	path = YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
