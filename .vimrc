@@ -515,7 +515,7 @@ nnoremap <leader>z :%s/\s\+$//<cr>:let @/=''<CR>
 let g:ctrlp_working_path_mode = 'ra'
 
 " Tab completion - local
-let g:SuperTabDefaultCompletionType = "<c-x><c-]>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-N>"
 
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -544,6 +544,7 @@ let NERDTreeIgnore = ['\.pyc$','\.sock$']
 
 let g:vdebug_features = {'max_depth':3}
 let g:tork_pre_command = "rvm use default@global > /dev/null"
+
 
 let g:tagcommands = {
 \	"php" : {
