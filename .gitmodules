@@ -54,7 +54,7 @@
 	url = http://github.com/othree/html5.vim.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
-	url = http://github.com/SirVer/utlisnips.git
+	url = http://github.com/SirVer/utlisnips
 [submodule "bundle/PHP_CodeSniffer"]
 	path = bundle/PHP_CodeSniffer
 	url = http://github.com/squizlabs/PHP_CodeSniffer
