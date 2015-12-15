@@ -63,6 +63,7 @@ if exists(':Bundle')
     Bundle 'phpmd/phpmd'
     Bundle 'mbbill/undotree'
     Bundle 'fholgado/minibufexpl.vim'
+    Bundle 'tpope/vim-surround'
 end
 "}}}
 
