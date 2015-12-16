@@ -551,9 +551,3 @@ let g:vdebug_features = {'max_depth':3}
 let g:tork_pre_command = "rvm use default@global > /dev/null"
 
 
-let g:tagcommands = {
-\	"php" : {
-\		"tagfile" : "~/php.tags",
-\		"args" : "-R"
-\	}
-\}
