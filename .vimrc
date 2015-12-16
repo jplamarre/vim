@@ -64,6 +64,7 @@ if exists(':Bundle')
     Bundle 'mbbill/undotree'
     Bundle 'fholgado/minibufexpl.vim'
     Bundle 'tpope/vim-surround'
+    Bundle 'rstacruz/sparkup'
 end
 "}}}
 
