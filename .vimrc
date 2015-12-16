@@ -475,7 +475,7 @@ nnoremap <Leader>h :nohl<CR>
 nnoremap <Leader>l :call LineNumberToggle()<cr>
 
 " CtrlP
-nnoremap <Leader>t :CtrlP getcwd()<CR>
+nnoremap <Leader>t :CtrlPTag<CR>
 nnoremap <Leader>f :CtrlPClearAllCaches<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>j :CtrlP ~/<CR>
