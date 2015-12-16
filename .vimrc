@@ -526,6 +526,9 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" Mardown to HTML
+nnoremap <leader>md :%!perl ~/.vim/plugin/Markdown.pl --html4tags<CR>
+
 " Vdebug options
 let g:vdebug_options = {"on_close":"detach"}
 
