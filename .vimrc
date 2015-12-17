@@ -65,6 +65,7 @@ if exists(':Bundle')
     Bundle 'fholgado/minibufexpl.vim'
     Bundle 'tpope/vim-surround'
     Bundle 'rstacruz/sparkup'
+    Bundle 'honza/vim-snippets.git'
 end
 "}}}
 
@@ -435,6 +436,11 @@ syntax sync minlines=256
 
 " Line numbers
 set relativenumber
+
+" Line wraps
+set nowrap
+set sidescroll=5
+set listchars+=precedes:<,extends:>
 "}}}
 
 "Fugitive (Git) in status line
@@ -538,12 +544,12 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_mode_map = { 'mode': 'active',
-"            \                   'active_filetypes' : ['php'],
-"            \                   'passive_filetypes' : [] }
+let g:syntastic_mode_map = { 'mode': 'active',
+            \                   'active_filetypes' : [],
+            \                   'passive_filetypes' : ['php'] }
 
 let NERDTreeIgnore = ['\.pyc$','\.sock$']
 
