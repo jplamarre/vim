@@ -193,7 +193,7 @@ endfunction
 "}}}
 " {{{ Sass compile
 let g:sass_output_file = ""
-let g:sass_enabled = 1
+let g:sass_enabled = 0
 let g:sass_path_maps = {}
 command! Sass call SassCompile()
 autocmd BufWritePost *.scss call SassCompile()
@@ -227,6 +227,19 @@ function! SassCompile()
         endif
     endif
     let g:sass_output_file = ""
+endfunction
+"}}}
+" {{{ Sass compile with GULP
+let g:sass_gulp_enabled = 1
+let g:sass_path_maps = {}
+command! Sass call SassGulpCompile()
+autocmd BufWritePost *.scss call SassGulpCompile()
+function! SassGulpCompile()
+    if g:sass_gulp_enabled == 0
+        return
+    endif
+    let l:op = system("gulp sass")
+    echo l:op
 endfunction
 "}}}
 "{{{ Function to use spaces instead of tabs
@@ -503,6 +516,14 @@ vnoremap <C-d> :call PhpDocRange()<CR>
 nnoremap <Leader>c :Gcommit -a<CR>i
 nnoremap <Leader>g :Git
 nnoremap <Leader>a :Git add %:p<CR>
+
+" Line moves
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 "}}}
 
 " Quick insert mode exit
