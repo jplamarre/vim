@@ -230,7 +230,7 @@ function! SassCompile()
 endfunction
 "}}}
 " {{{ Sass compile with GULP
-let g:sass_gulp_enabled = 1
+let g:sass_gulp_enabled = 0
 let g:sass_path_maps = {}
 command! Sass call SassGulpCompile()
 autocmd BufWritePost *.scss call SassGulpCompile()
@@ -449,6 +449,7 @@ syntax sync minlines=256
 
 " Line numbers
 set relativenumber
+set number
 
 " Line wraps
 set nowrap
@@ -500,10 +501,6 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>j :CtrlP ~/<CR>
 nnoremap <Leader>p :CtrlP<CR>
 
-" Instead of 1 line, move 3 at a time
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
 " Show hidden characters (spaces, tabs, etc)
 nmap <silent> <leader>s :set nolist!<CR>
 
@@ -518,6 +515,8 @@ nnoremap <Leader>g :Git
 nnoremap <Leader>a :Git add %:p<CR>
 
 " Line moves
+execute "set <A-k>=\ek"
+execute "set <A-j>=\ej"
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
